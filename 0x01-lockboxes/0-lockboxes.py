@@ -11,6 +11,7 @@ def canUnlockAll(boxes: list) -> bool:
         return False
     # Keep a list of opened boxes. The first box is always opened
     openedBoxes = [0]
+
     def collectKeys(box):
         # Just a routine check
         if not box or not isinstance(box, list):
@@ -25,4 +26,3 @@ def canUnlockAll(boxes: list) -> bool:
                 collectKeys(boxes[key])
     collectKeys(boxes[0])
     return len(openedBoxes) == len(boxes)
-
