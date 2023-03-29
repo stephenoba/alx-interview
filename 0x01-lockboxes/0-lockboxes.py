@@ -28,6 +28,8 @@ def canUnlockAll(boxes: list) -> bool:
 
 
 def canUnlockAll(boxes):
+    """
+    Solution to lockboxes question"""
     n = len(boxes)
     visited = set()
     visited.add(0)
