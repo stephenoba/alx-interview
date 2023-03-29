@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 Contains function canUnlockAll"""
 
@@ -13,6 +13,7 @@ def canUnlockAll(boxes: list) -> bool:
     openedBoxes = [0]
 
     def collectKeys(box):
+        """Helper Fuction to collect keys"""
         # Just a routine check
         if not box or not isinstance(box, list):
             return
