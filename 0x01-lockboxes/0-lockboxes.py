@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 """
-Contains function canUnlockAll"""
+Contains function canUnlockAll
 
-
+Alternative Solution
 def canUnlockAll(boxes: list) -> bool:
-    """
-    Solution to lockboxes question"""
     # check If there are boxes or boxes is not a list
     if not boxes or not isinstance(boxes, list):
         return False
@@ -13,7 +11,6 @@ def canUnlockAll(boxes: list) -> bool:
     openedBoxes = [0]
 
     def collectKeys(box):
-        """Helper Fuction to collect keys"""
         # Just a routine check
         if not box or not isinstance(box, list):
             return
@@ -27,3 +24,20 @@ def canUnlockAll(boxes: list) -> bool:
                 collectKeys(boxes[key])
     collectKeys(boxes[0])
     return len(openedBoxes) == len(boxes)
+"""
+
+
+def canUnlockAll(boxes):
+    n = len(boxes)
+    visited = set()
+    visited.add(0)
+    queue = [0]
+
+    while queue:
+        curr = queue.pop(0)
+        for key in boxes[curr]:
+            if key < n and key not in visited:
+                visited.add(key)
+                queue.append(key)
+
+    return len(visited) == n
