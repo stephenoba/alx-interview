@@ -1,2 +1,2 @@
 # alx-interview
- Interview questions - by ALX
+ Solutions to interview questions by ALX
