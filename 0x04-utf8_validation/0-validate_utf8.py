@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Module contains validateUTF8 function"""
 
 def validUTF8(data):
     """
