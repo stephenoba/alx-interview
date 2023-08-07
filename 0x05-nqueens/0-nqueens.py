@@ -1,18 +1,20 @@
 #!/usr/bin/python3
 import sys
 
+
 def is_valid(board, row, col):
     for i in range(col):
         if board[i] == row or \
-            board[i] - i == row - col or \
-            board[i] + i == row + col:
+                board[i] - i == row - col or \
+                board[i] + i == row + col:
             return False
     return True
+
 
 def solve_n_queens(board, col, n):
     if col == n:
         return [board[:]]
-    
+
     solutions = []
     for i in range(n):
         if is_valid(board, i, col):
@@ -21,11 +23,13 @@ def solve_n_queens(board, col, n):
                 solutions.append(solution)
     return solutions
 
+
 def nqueens(n):
     board = [-1] * n
     solutions = solve_n_queens(board, 0, n)
     for solution in solutions:
         print([list(p) for p in enumerate(solution)])
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
