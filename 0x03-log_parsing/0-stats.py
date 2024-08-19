@@ -70,7 +70,6 @@ def main():
         '405': 0,
         '500': 0,
     }
-    
     try:
         while True:
             line = input()
